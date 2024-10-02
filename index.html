@@ -439,6 +439,9 @@
             <div class="cont3">Mais informações no vídeo acima...</div>
         </div>
 
+        <!-- Botão para resetar o progresso do vídeo -->
+        <button id="resetBtn" onclick="resetVideoProgress()">Resetar Progresso</button>
+
         <div class="footer-info">
             <p><strong>Garantia de Satisfação de 60 Dias</strong></p>
             <p>© 2023 — 2024 Método Cabelo DNA</p>
@@ -495,7 +498,7 @@
                     playPauseBtn.classList.add('playing');
                     setTimeout(() => {
                         playPauseBtn.classList.add('hidden');
-                    }, 300);
+                    }, 600);
                 } else {
                     video.pause();
                     playPauseBtn.classList.remove('playing');
@@ -504,7 +507,7 @@
             }
     
             video.addEventListener('timeupdate', function() {
-                if (video.currentTime >= 30) {
+                if (video.currentTime >= 60) {
                     containerProdUnique.style.display = 'block';
                     saveVideoProgress(); // Salva no LocalStorage
                 }
